@@ -38,9 +38,8 @@
       "registryDependencies": ["card"],
       "files": [
         {
-          "path": "registry/base-nova/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
+          "path": "registry/base-nova/blocks/complex-component/pokemon-list.tsx",
+          "type": "registry:component"
         },
         {
           "path": "registry/base-nova/blocks/complex-component/components/pokemon-card.tsx",
