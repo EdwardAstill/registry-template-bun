@@ -8,11 +8,11 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/registry/new-york/ui/card"
-import { Input } from "@/registry/new-york/ui/input"
-import { Label } from "@/registry/new-york/ui/label"
-import { Button } from "@/registry/new-york/ui/button"
-import { Textarea } from "@/registry/new-york/ui/textarea"
+} from "@/registry/base-nova/ui/card"
+import { Input } from "@/registry/base-nova/ui/input"
+import { Label } from "@/registry/base-nova/ui/label"
+import { Button } from "@/registry/base-nova/ui/button"
+import { Textarea } from "@/registry/base-nova/ui/textarea"
 import { z } from "zod"
 
 const exampleFormSchema = z.object({
@@ -113,7 +113,7 @@ export function ExampleForm() {
             <Input
               id="email"
               name="email"
-              placeholder="leerob@acme.com"
+              placeholder="you@example.com"
               className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.email}

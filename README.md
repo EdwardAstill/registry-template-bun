@@ -1,23 +1,46 @@
-# registry-template
+# Bun + Base UI shadcn registry template
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A template for running your own [shadcn registry](https://ui.shadcn.com/docs/registry) with [Bun](https://bun.com) and [Base UI](https://base-ui.com).
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+This repository is based on the official [shadcn registry template](https://github.com/shadcn-ui/registry-template). It is configured for the `base-nova` shadcn style and uses Base UI primitives instead of Radix UI.
 
-## Getting Started
+## Requirements
 
-This is a template for creating a custom registry using Next.js.
+- Bun 1.4.0 (the latest stable release when this template was created)
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+Install Bun on macOS, Linux, or WSL:
 
-## Documentation
+```bash
+curl -fsSL https://bun.com/install | bash
+```
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+## Getting started
+
+Create a repository with GitHub's **Use this template** button, then run:
+
+```bash
+bun install
+bun run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to preview the registry.
+
+## Build the registry
+
+Edit `registry.json` and add source files under `registry/base-nova`, then generate the installable JSON files:
+
+```bash
+bun run registry:build
+```
+
+The generated registry items are written to `public/r`. Commit them whenever their source changes.
+
+## Add shadcn components
+
+The `components.json` file selects Base UI through the `base-nova` style. Add components with Bun:
+
+```bash
+bunx --bun shadcn@latest add button
+```
+
+See the [shadcn registry documentation](https://ui.shadcn.com/docs/registry) and [Base UI component documentation](https://base-ui.com/react/components) for more details.
